@@ -44,6 +44,10 @@ public class ProjectDemo_1 {
 	        	
 	        	event_list.add(addEvent);
 	        	
+	        	//System.out.println(addEvent.toString());
+	        	
+	        	System.out.println("This is the public event:\nEvent name: "+addEvent.getEvent_name()+"\nEvent date: " +addEvent.getEvent_date()+ "\nEvent description: " +addEvent.getEvent_description());
+	        	
 	            break; 
 	        
 	        default: 
@@ -51,9 +55,15 @@ public class ProjectDemo_1 {
 	        	PrivateEvent addEvent1 = new PrivateEvent(tempEvent);
 	        	
 	        	event_list.add(addEvent1);
+	        	
+
+	        	System.out.println("This is the private event:\nEvent name: "+addEvent1.getEvent_name()+"\nEvent date: " +addEvent1.getEvent_date()+ "\nEvent description: " +addEvent1.getEvent_description());
+	        	
 	            
 	        	break; 
 		 }
+		 
+		 
 
 	}
 }
