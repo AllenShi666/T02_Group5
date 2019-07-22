@@ -9,6 +9,13 @@ public class PrivateEvent extends Event{
 	
 	public PrivateEvent() {}
 	
+	public PrivateEvent(Event A) {
+		
+		super.event_date = (A.getEvent_date());
+		super.event_name = (A.getEvent_name());
+		super.event_description = (A.getEvent_description());
+	}
+	
 	public PrivateEvent(String event_type, int event_color) {
 		super();
 		this.event_type = event_type;
@@ -42,8 +49,5 @@ public class PrivateEvent extends Event{
 	public void displayA_PriEvent(Event a) {
 		
 	}
-	public void setEvent_name(String data) {
-		super.setEvent_name(data);	
-		}
 	 
 }

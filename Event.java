@@ -1,19 +1,17 @@
 //import java.util.Calendar;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Event {
-	private Calendar event_date;
-	private int id = 0;
-	private char privacy_type ='\0';
-	private String event_name = "";
-	private String event_description = "";
-	private int color_id = 0;
+	protected String event_date;
+	protected int id = 0;
+	protected char privacy_type ='\0';
+	protected String event_name = "";
+	protected String event_description = "";
+	protected int color_id = 0;
 
 	public Event() {}
-	
-	public Event (String name){
-		this.event_name= name;
-	}
 	
 	public Event newEvent(Event newevent) {
 		return newevent.newEvent(newevent);
@@ -23,13 +21,21 @@ public class Event {
 		
 	}
 
-	public Calendar getEvent_date() {
+	public String getEvent_date() {
 		return event_date;
 	}
 
-	public void setEvent_date(Calendar event_date) {
+	public void setEvent_date(String event_date) {
 		this.event_date = event_date;
 	}
+	
+	/*public void setEvent_date(String inputEvent) {
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+		Date date = formatter.parse(inputEvent);
+		Calendar calender = Calendar.getInstance();
+		calender.setTime(date);
+	}*/
 
 	public String getEvent_name() {
 		return event_name;
