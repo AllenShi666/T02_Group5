@@ -11,6 +11,10 @@ public class Event {
 
 	public Event() {}
 	
+	public Event (String name){
+		this.event_name= name;
+	}
+	
 	public Event newEvent(Event newevent) {
 		return newevent.newEvent(newevent);
 	}

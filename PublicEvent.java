@@ -14,7 +14,7 @@ public class PublicEvent extends Event{
 	public PublicEvent (String name, int date, String type)
 	
 	public PublicEvent(String event_data) {
-		// TODO Auto-generated constructor stub
+		super.setEvent_name(event_data);
 	}
 	/*This function takes in a string which could be a name, type 
 	or description of the event that needs to be changed, and the indicator (1, 2, or 3)
@@ -32,6 +32,9 @@ public class PublicEvent extends Event{
 	 
 	public void displayA_PubEvent(Event a) {
 		
+	}
+	public void setEvent_name(String data) {
+	
 	}
 	 
 }

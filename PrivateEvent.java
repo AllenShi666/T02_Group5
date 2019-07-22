@@ -42,5 +42,8 @@ public class PrivateEvent extends Event{
 	public void displayA_PriEvent(Event a) {
 		
 	}
+	public void setEvent_name(String data) {
+		super.setEvent_name(data);	
+		}
 	 
 }
