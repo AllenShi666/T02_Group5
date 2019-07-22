@@ -6,6 +6,7 @@ CPSC 233 - Group 5 Tutorial 2 ReadMe File
 How to Access:
 1) Go to T02_Group5 in GitHub (Shared by user AllenShi666)
 2) Clone repository and import the following class files to Eclipse:
+3) Note: DO NOT USE FILES FROM FOLDER "CLASS PROJECT" or "PLeaseWork"
 
 A) ProjectDemo_1.java
 B) PrivateEvent.java
