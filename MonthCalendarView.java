@@ -70,8 +70,17 @@ public class MonthCalendarView {
         GridPane calendar = new GridPane();
         calendar.setPrefSize(800, 600);
         calendar.setGridLinesVisible(true);
+		
+		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
+            public void handle(ActionEvent e) 
+            { 
+                l.setText("   button   selected    "); 
+            } 
+        }; 
+		
+		
 	Button b1=new Button("New Event");
-		b1.setOnAction()
+	b1.setOnAction(event);
 	
         // Create rows and columns with anchor panes for the calendar
         for (int i = 0; i < 5; i++) {
@@ -80,7 +89,7 @@ public class MonthCalendarView {
                 dayPane.setPrefSize(200,200);
                 calendar.add(dayPane,j,i);
                 CalendarDays.add(dayPane);
-		
+		r.getchildren.add(b1);
 		
 		    
             }
