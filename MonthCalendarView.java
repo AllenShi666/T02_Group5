@@ -5,7 +5,43 @@ import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;import java.time.YearMonth;
+import java.util.ArrayList;
+import javafx.scene.control.Button;
+import javafx.scene.Parent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+
+import java.time.LocalDate;
+import javafx.scene.control.*;
+ 
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+ 
+public class ContextMenuDemo extends Application {
+ 
+    @Override
+    public void start(Stage stage) {
+ 
+Label label = new Label();
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -18,10 +54,14 @@ import java.time.LocalDate;
 
 public class MonthCalendarView {
 	
-	private ArrayList<customCalendarObject> CalendarDays = new ArrayList<>(35);
+    private ArrayList<customCalendarObject> CalendarDays = new ArrayList<>(35);
     private VBox view;
     private Text calendarTitle;
     private YearMonth currentYearMonth;
+    private ArrayList<Button> =new ArrayList<Button>(35);
+	
+	
+	
     
 	public MonthCalendarView(YearMonth currYearMonth) {
 		// TODO Auto-generated constructor stub
@@ -30,6 +70,18 @@ public class MonthCalendarView {
         GridPane calendar = new GridPane();
         calendar.setPrefSize(800, 600);
         calendar.setGridLinesVisible(true);
+		
+		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
+            public void handle(ActionEvent e) 
+            { 
+                l.setText("   button   selected    "); 
+            } 
+        }; 
+		
+		
+	Button b1=new Button("New Event");
+	b1.setOnAction(event);
+	
         // Create rows and columns with anchor panes for the calendar
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 7; j++) {
@@ -37,6 +89,9 @@ public class MonthCalendarView {
                 dayPane.setPrefSize(200,200);
                 calendar.add(dayPane,j,i);
                 CalendarDays.add(dayPane);
+		r.getchildren.add(b1);
+		
+		    
             }
          }
         // Days of the week labels
@@ -119,4 +174,6 @@ public class MonthCalendarView {
     public void setAllCalendarDays(ArrayList<customCalendarObject> allCalendarDays) {
         this.CalendarDays = allCalendarDays;
     }
+	
+	
 }
