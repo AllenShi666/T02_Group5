@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 import java.time.LocalDate;
-import import javafx.contextmenujavafx.scene.control.ContextMenu;
+import javafx.contextmenujavafx.scene.control.ContextMenu;
 
 
 public class MonthCalendarView {
