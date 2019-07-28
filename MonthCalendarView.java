@@ -58,7 +58,7 @@ public class MonthCalendarView {
     private VBox view;
     private Text calendarTitle;
     private YearMonth currentYearMonth;
-	private ArrayList<Button> =new ArrayList<Button>[]
+	private ArrayList<Button> =new ArrayList<Button>[];
     
 	public MonthCalendarView(YearMonth currYearMonth) {
 		// TODO Auto-generated constructor stub
