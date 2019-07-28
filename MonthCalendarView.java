@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 import java.time.LocalDate;
-
+import java.import javafx.scene.control.ContextMenu;
 
 
 public class MonthCalendarView {
@@ -119,4 +119,12 @@ public class MonthCalendarView {
     public void setAllCalendarDays(ArrayList<customCalendarObject> allCalendarDays) {
         this.CalendarDays = allCalendarDays;
     }
+	
+	
+	public void setEventOption(){
+		
+		
+		
+		
+	}
 }
