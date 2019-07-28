@@ -54,11 +54,11 @@ import java.time.LocalDate;
 
 public class MonthCalendarView {
 	
-	private ArrayList<customCalendarObject> CalendarDays = new ArrayList<>(35);
+    private ArrayList<customCalendarObject> CalendarDays = new ArrayList<>(35);
     private VBox view;
     private Text calendarTitle;
     private YearMonth currentYearMonth;
-	private ArrayList<Button> =new ArrayList<Button>[];
+    private ArrayList<Button> =new ArrayList<Button>(35);
     
 	public MonthCalendarView(YearMonth currYearMonth) {
 		// TODO Auto-generated constructor stub
@@ -74,6 +74,8 @@ public class MonthCalendarView {
                 dayPane.setPrefSize(200,200);
                 calendar.add(dayPane,j,i);
                 CalendarDays.add(dayPane);
+		Button b1=new Button("New Event");
+		    
 		    
             }
          }
