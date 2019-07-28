@@ -30,6 +30,8 @@ public class MonthCalendarView {
         GridPane calendar = new GridPane();
         calendar.setPrefSize(800, 600);
         calendar.setGridLinesVisible(true);
+	// add event button 
+	Button b = new Button("EventButton"); 
         // Create rows and columns with anchor panes for the calendar
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 7; j++) {
@@ -119,4 +121,5 @@ public class MonthCalendarView {
     public void setAllCalendarDays(ArrayList<customCalendarObject> allCalendarDays) {
         this.CalendarDays = allCalendarDays;
     }
+	
 }
