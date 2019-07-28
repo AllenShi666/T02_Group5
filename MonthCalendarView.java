@@ -59,6 +59,9 @@ public class MonthCalendarView {
     private Text calendarTitle;
     private YearMonth currentYearMonth;
     private ArrayList<Button> =new ArrayList<Button>(35);
+	
+	
+	
     
 	public MonthCalendarView(YearMonth currYearMonth) {
 		// TODO Auto-generated constructor stub
@@ -67,6 +70,9 @@ public class MonthCalendarView {
         GridPane calendar = new GridPane();
         calendar.setPrefSize(800, 600);
         calendar.setGridLinesVisible(true);
+	Button b1=new Button("New Event");
+		b1.setOnAction()
+	
         // Create rows and columns with anchor panes for the calendar
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 7; j++) {
@@ -74,8 +80,8 @@ public class MonthCalendarView {
                 dayPane.setPrefSize(200,200);
                 calendar.add(dayPane,j,i);
                 CalendarDays.add(dayPane);
-		Button b1=new Button("New Event");
-		    
+		
+		
 		    
             }
          }
