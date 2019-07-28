@@ -4,7 +4,7 @@ import java.util.Calendar;
 /*To discuss today:
  * 
  * -how to add button to daypane
- * ---root.getChildren() or dayPane.getChildren() or god know fucking what
+ * ---root.getChildren() or dayPane.getChildren() or god knows
  * -add event array to MonthCalendarView()
  * --- have an addEvent fucntion in Event to add new events to array
  * -
