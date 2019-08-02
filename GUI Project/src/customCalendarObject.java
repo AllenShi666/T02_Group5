@@ -44,6 +44,7 @@ public class customCalendarObject extends AnchorPane {
 		Scanner input = new Scanner(System.in);
 		Event tempEvent = new Event();
 		
+		
         // Add action handler for mouse clicked
         this.setOnMouseClicked(e -> System.out.println("Please enter 'p' for a personal event (ex. a quiz or meeting) or "
 				+ "any other letter for an academic/university sanctioned event (school fee "

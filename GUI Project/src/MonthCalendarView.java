@@ -5,43 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;import java.time.YearMonth;
-import java.util.ArrayList;
-import javafx.scene.control.Button;
-import javafx.scene.Parent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-
-import java.time.LocalDate;
-import javafx.scene.control.*;
- 
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
- 
-public class ContextMenuDemo extends Application {
- 
-    @Override
-    public void start(Stage stage) {
- 
-Label label = new Label();
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -54,46 +18,36 @@ import java.time.LocalDate;
 
 public class MonthCalendarView {
 	
-    private ArrayList<customCalendarObject> CalendarDays = new ArrayList<>(35);
+	private ArrayList<customCalendarObject> CalendarDays = new ArrayList<>(35);
     private VBox view;
     private Text calendarTitle;
     private YearMonth currentYearMonth;
-    private ArrayList<Button> =new ArrayList<Button>(35);
-	
-	
-	
+    private Button newEvent = new Button("Add New Event");
+    private Button viewEvent = new Button("View Events");
+    
     
 	public MonthCalendarView(YearMonth currYearMonth) {
 		// TODO Auto-generated constructor stub
 		currentYearMonth = currYearMonth;
         // Create the calendar grid pane
         GridPane calendar = new GridPane();
-        calendar.setPrefSize(800, 600);
+        calendar.setPrefSize(600, 600);
         calendar.setGridLinesVisible(true);
-		
-		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() { 
-            public void handle(ActionEvent e) 
-            { 
-                l.setText("   button   selected    "); 
-            } 
-        }; 
-		
-		
-	Button b1=new Button("New Event");
-	b1.setOnAction(event);
-	
         // Create rows and columns with anchor panes for the calendar
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 7; j++) {
                 customCalendarObject dayPane = new customCalendarObject();
-                dayPane.setPrefSize(200,200);
+                dayPane.setPrefSize(600,800);
                 calendar.add(dayPane,j,i);
                 CalendarDays.add(dayPane);
-		r.getchildren.add(b1);
-		
-		    
             }
          }
+        
+    HandleButtonAdd handleAdd = new HandleButtonAdd("Add");
+    
+    newEvent.setOnAction(handleAdd);
+    
+    
         // Days of the week labels
         Text[] dayNames = new Text[]{ new Text("Sunday"), new Text("Monday"), new Text("Tuesday"),
                                         new Text("Wednesday"), new Text("Thursday"), new Text("Friday"),
@@ -104,7 +58,10 @@ public class MonthCalendarView {
         for (Text txt : dayNames) {
             AnchorPane dayPane = new AnchorPane();
             dayPane.setPrefSize(200, 10);
-            dayPane.setBottomAnchor(txt, 5.0);
+            dayPane.setBottomAnchor(txt, 0.0);
+            dayPane.setRightAnchor(txt, 0.0);
+            dayPane.setLeftAnchor(txt, 0.0);;
+            dayPane.setTopAnchor(txt,  0.0);
             dayPane.getChildren().add(txt);
             dayLabels.add(dayPane, col++, 0);
         }
@@ -120,7 +77,10 @@ public class MonthCalendarView {
         // Populate calendar with the appropriate day numbers
         populateCalendar(currYearMonth);
         // Create the calendar view
-        view = new VBox(titleBar, dayLabels, calendar);
+        HBox bottomView = new HBox();
+        bottomView.getChildren().add(newEvent);
+        bottomView.getChildren().add(viewEvent);
+        view = new VBox(titleBar, dayLabels, calendar, bottomView);
 	}
 	
 	public void populateCalendar(YearMonth curryearMonth) {
@@ -174,6 +134,4 @@ public class MonthCalendarView {
     public void setAllCalendarDays(ArrayList<customCalendarObject> allCalendarDays) {
         this.CalendarDays = allCalendarDays;
     }
-	
-	
 }
