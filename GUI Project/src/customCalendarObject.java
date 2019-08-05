@@ -31,45 +31,14 @@ public class customCalendarObject extends AnchorPane {
 	private ArrayList<Event> dayEventList = new ArrayList<Event>();
 	
 	
-	public customCalendarObject() {
-		
-	}
 	
 	
-	public customCalendarObject(Node clickDay) {
+	public customCalendarObject(Node...children) {
 		
-		super();
-		
-		String eventType;
-		Scanner input = new Scanner(System.in);
-		Event tempEvent = new Event();
+		super(children);
+		this.setOnMouseClicked(e -> System.out.println("Today's events are: " + day));
 		
 		
-        // Add action handler for mouse clicked
-        this.setOnMouseClicked(e -> System.out.println("Please enter 'p' for a personal event (ex. a quiz or meeting) or "
-				+ "any other letter for an academic/university sanctioned event (school fee "
-				+ "deadline, faculty networking event etc): "));
-        
-       //This has to switch to GUI-based input
-        eventType=(input.nextLine());
-		
-		 switch (eventType) { 
-	        case "p": 
-	        	PublicEvent addEvent = new PublicEvent(tempEvent);
-	        	
-	        	dayEventList.add(addEvent);
-	        
-	        break;
-	      
-	        default: 
-	        	
-	        	PrivateEvent addEvent1 = new PrivateEvent(tempEvent);
-	        	
-	        	dayEventList.add(addEvent1);
-	        	
-	        	break; 
-	        
-		 }
 		
 	}
 	

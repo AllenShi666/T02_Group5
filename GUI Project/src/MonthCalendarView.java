@@ -24,6 +24,7 @@ public class MonthCalendarView {
     private YearMonth currentYearMonth;
     private Button newEvent = new Button("Add New Event");
     private Button viewEvent = new Button("View Events");
+    private Button viewWeek = new Button("Week View");
     
     
 	public MonthCalendarView(YearMonth currYearMonth) {
@@ -44,8 +45,12 @@ public class MonthCalendarView {
          }
         
     HandleButtonAdd handleAdd = new HandleButtonAdd("Add");
+    HandleButtonAdd handleAdd2 = new HandleButtonAdd("View");
+    HandleButtonAdd handleAdd3 = new HandleButtonAdd("WView");
     
     newEvent.setOnAction(handleAdd);
+    viewEvent.setOnAction(handleAdd2);
+    viewWeek.setOnAction(handleAdd3);
     
     
         // Days of the week labels
@@ -80,6 +85,7 @@ public class MonthCalendarView {
         HBox bottomView = new HBox();
         bottomView.getChildren().add(newEvent);
         bottomView.getChildren().add(viewEvent);
+        bottomView.getChildren().add(viewWeek);
         view = new VBox(titleBar, dayLabels, calendar, bottomView);
 	}
 	
