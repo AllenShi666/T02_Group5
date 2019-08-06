@@ -38,7 +38,7 @@ public class HandleButtonAdd implements EventHandler <ActionEvent> {
 		public void start2(Stage secondStage) {
 			
 			secondStage.setTitle("All Events");
-			EventGUI b = new EventGUI();
+			viewEventGUI b = new viewEventGUI();
 			secondStage.setScene(new Scene(b.getViewEventDisplay()));
 			secondStage.show();
 		}
@@ -63,8 +63,8 @@ public class HandleButtonAdd implements EventHandler <ActionEvent> {
 			e.start(eventGUI);
 		} else if(message == "View") {
 			eventWindow ee = new eventWindow();
-			Stage eventGUI = new Stage();
-			ee.start2(eventGUI);
+			Stage viewEventGUI = new Stage();
+			ee.start2(viewEventGUI);
 		
 		} else if(message == "WView") {
 			eventWindow WV = new eventWindow();

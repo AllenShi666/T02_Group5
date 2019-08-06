@@ -1,21 +1,27 @@
 //import java.util.Calendar;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class Event {
-	protected String event_date;
+	//protected String event_date;
 	protected int id = 0;
+	protected String event_date;
 	protected String privacy_type;
 	protected String event_name = "";
 	protected String event_description = "";
 	protected int color_id = 0;
 	protected String event_StartTime;
 	protected String event_EndTime;
-	protected String event_Date; //start date
+	protected Date event_Date_Time; //start date
 	protected String event_EndDate;
+	private Alert dateAlert = new Alert(AlertType.WARNING);
 
 	public Event() {}
 	
@@ -62,26 +68,61 @@ public class Event {
 	public void setEvent_EndDate(String event_EndDate) {
 		this.event_EndDate = event_EndDate;
 	}
+	
+	public Date getEvent_Date_Time() {
+		return event_Date_Time;
+	}
+
 
 	public String getEvent_date() {
 		return event_date;
 	}
 
 	public void setEvent_date(String event_date) {
+		
 		this.event_date = event_date;
+		}
+		
+	
+	public void setEvent_Date_Time(String event_date) {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			this.event_Date_Time = formatter.parse(event_date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			dateAlert.setAlertType(AlertType.WARNING);
+			dateAlert.setContentText("Event date is incorrectly formatted.");
+			dateAlert.show();
+		}
 	}
 	
-	/*public void setEvent_date(String inputEvent) {
+	public Date eventString_to_Date(String inputEvent) {
 		
-		SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
-		Date date = formatter.parse(inputEvent);
-		Calendar calender = Calendar.getInstance();
-		calender.setTime(date);
-	}*/
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date javaDate = null;
+		
+		try {
+			javaDate = (Date) formatter.parse(inputEvent);
+			System.out.println("Line 97:: This is JavaDate: \n "+ javaDate);
+			this.event_date=inputEvent;
+			return javaDate;
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			dateAlert.setAlertType(AlertType.WARNING);
+			dateAlert.setContentText("Event date is incorrectly formatted.");
+			dateAlert.show();
+			return javaDate;
+		}
+		
+	}
 
 	public String getEvent_name() {
 		return event_name;
 	}
+	
+
 
 	public void setEvent_name(String event_name) {
 		this.event_name = event_name;
@@ -112,7 +153,7 @@ public class Event {
 	}
 	
 	public String toString() {
-		return this.getEvent_name()+this.getEvent_date()+this.getEvent_description();
+		return this.getEvent_name()+ " " + this.getEvent_Date_Time()+ " "+ this.getEvent_StartTime()+ " " + this.getEvent_EndTime() + " " + this.getEvent_description();
 	}
 	
 	

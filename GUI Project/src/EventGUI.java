@@ -1,5 +1,8 @@
 import java.time.YearMonth;
+
 import java.util.ArrayList;
+import java.util.Date;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -21,36 +24,33 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType; 
 
 public class EventGUI implements EventArrayListClass {
 
 	
 	//Variables for the Add Event GUI screen
+	private ImportEvent ie = new ImportEvent();
 	private VBox display = new VBox();
 	private Label eventName = new Label("Event Name: ");
 	private Label eventDescription = new Label("Event Description: ");
 	private Label eventDate = new Label("Event Date (YYYY-MM-DD): ");
+	private Label eventStartTime = new Label("Event Start Time (24Hr. HH:MM): ");
+	private Label eventEndTime = new Label("Event End Time (24Hr. HH:MM): ");
+	private Alert dateAlert = new Alert(AlertType.WARNING);
 	private Button saveEvent = new Button("Save");
 	private TextField typedName = new TextField();
 	private TextField typedDate = new TextField();
 	private TextField typedDes = new TextField();
+	private TextField typedStartTime = new TextField();
+	private TextField typedEndTime = new TextField();
 	private Event eventVariable = new Event();
-	
-	//Variables for the View Event GUI screen
-	private VBox viewEventsDisplay = new VBox();
-	private Label viewEventsname = new Label("Event Name: ");
-	private Label viewEventsDate = new Label("Event Date: ");
-	private Label viewEventsTime = new Label("Event Time: ");
-	private HBox viewEventsTitle = new HBox();
-	private HBox viewEventContents = new HBox();
-	private VBox viewEventContent1 = new VBox();
-	private VBox viewEventContent2 = new VBox();
-	private VBox viewEventContent3 = new VBox();
-	private TableView viewEventTable = new TableView();
-	
-	
-	
 	
 	public VBox getDisplay() {	
 		
@@ -63,28 +63,51 @@ public class EventGUI implements EventArrayListClass {
 		display.getChildren().add(typedDate);
 		display.getChildren().add(eventDescription);
 		display.getChildren().add(typedDes);
+		display.getChildren().add(eventStartTime);
+		display.getChildren().add(typedStartTime);
+		display.getChildren().add(eventEndTime);
+		display.getChildren().add(typedEndTime);
 		saveEvent.setOnAction( new EventHandler <ActionEvent> (){
 			
-			//What happens when "Save" in the Add Event screen is hit - handler is executed manually inside GUI code
+			/*What happens when "Save" in the Add Event screen is hit - handler is executed manually inside GUI code
+			To get around the the default handle in the handle button add class*/
 			@Override
 			public void handle (ActionEvent a) {
 				
+			
+				
+				
+				
 				eventVariable.setEvent_name(typedName.getText());
-				eventVariable.setEvent_date(typedDate.getText());
+				
+				//eventVariable.setEvent_date(typedDate.getText());
+				
+				eventVariable.event_Date_Time = eventVariable.eventString_to_Date(typedDate.getText());
+				
 				eventVariable.setEvent_description(typedDes.getText());
-				globalEventList.add(eventVariable);
+				
+				eventVariable.setEvent_StartTime(typedStartTime.getText());
+				
+				eventVariable.setEvent_EndTime(typedEndTime.getText());
+								
 				strglobalEventList.add(eventVariable);
 				
 				
 				Event printEvent = eventVariable;
 				
-				System.out.println(printEvent.toString());
+				ie.ExportCSV(printEvent);
+				
+				System.out.println("Success: " + printEvent.toString());
+				System.out.println("Success: EventGUI Line 86 (Date) " + printEvent.event_Date_Time);
 				
 				Stage stage = (Stage) saveEvent.getScene().getWindow();
 				stage.close();
 				
+			} 
+			
 				
-			}
+				
+			
 			
 		});
 		display.getChildren().add(saveEvent);
@@ -92,57 +115,6 @@ public class EventGUI implements EventArrayListClass {
 		
 		return display;
 	}
-	
-	public VBox getViewEventDisplay() {
-		
-		
-		viewEventTable.setEditable(false);
-		TableColumn eventNameCol = new TableColumn("Event Name");
-		eventNameCol.setMinWidth(150);
-		eventNameCol.setCellValueFactory(new PropertyValueFactory<Event, String>("event_name"));
-		TableColumn eventDateCol = new TableColumn("Event Date");
-		eventDateCol.setMinWidth(120);
-		eventDateCol.setCellValueFactory(new PropertyValueFactory<Event, String>("event_date"));
-		TableColumn eventDesCol = new TableColumn("Event Description");
-		eventDesCol.setMinWidth(400);
-		eventDesCol.setCellValueFactory(new PropertyValueFactory<Event, String>("event_description"));
-		
-		viewEventTable.setItems(strglobalEventList);
-		viewEventTable.getColumns().addAll(eventNameCol, eventDateCol, eventDesCol);
-		
-		
-		
-		
-		
-		viewEventsDisplay.getChildren().add(viewEventsTitle);
-		viewEventsDisplay.getChildren().add(viewEventContents);
-		viewEventsDisplay.getChildren().add(viewEventTable);
-		
-		
-		
-		
-		
-		
-		
-		return viewEventsDisplay;
-	}
-	
-	
-	 
-	public ArrayList <String> getTextFields() {
-		
-		ArrayList<String>returnStrings = new ArrayList<String>();
-		
-		returnStrings.add(typedName.getText());
-		returnStrings.add(typedDate.getText());
-		returnStrings.add(typedDes.getText());
-		return returnStrings;
-	}
-	
-	public void shutWindow(Stage StageWindow) {
-		
-		StageWindow.close();
-	}
-	
+
 	
 }
