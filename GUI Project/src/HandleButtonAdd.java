@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import java.time.LocalDate;
 
 
 public class HandleButtonAdd implements EventHandler <ActionEvent> {
@@ -34,9 +35,22 @@ public class HandleButtonAdd implements EventHandler <ActionEvent> {
 	        
 		}
 	
+		public void start2(Stage secondStage) {
+			
+			secondStage.setTitle("All Events");
+			viewEventGUI b = new viewEventGUI();
+			secondStage.setScene(new Scene(b.getViewEventDisplay()));
+			secondStage.show();
+		}
+
+		public void start3(Stage weekView) {
+			// TODO Auto-generated method stub
+			weekView.setTitle("Weekly View");
+			WeekGUI week = new WeekGUI();
+			weekView.setScene(new Scene(week.getWeekDisplay()));
+			weekView.show();
+		}
 	
-		
-		
 	}
 	
 	//Initializes second stage
@@ -47,15 +61,19 @@ public class HandleButtonAdd implements EventHandler <ActionEvent> {
 			eventWindow e = new eventWindow();
 			Stage eventGUI = new Stage();
 			e.start(eventGUI);
-		} else if(message == "Save") {
-			
-			
+		} else if(message == "View") {
+			eventWindow ee = new eventWindow();
+			Stage viewEventGUI = new Stage();
+			ee.start2(viewEventGUI);
+		
+		} else if(message == "WView") {
+			eventWindow WV = new eventWindow();
+			Stage WeekView = new Stage();
+			WV.start3(WeekView);
 		}
 		int counter = 0;
 		
 		counter++;
 	}
-
-	
 
 }
