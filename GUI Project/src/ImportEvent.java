@@ -35,10 +35,10 @@ public class ImportEvent implements EventArrayListClass{
 	            
 				try {
 					List<List<String>> rows = Arrays.asList(
-        			    Arrays.asList("Labour Day", "2019/09/02","N/A","N/A","N/A","Statutory Holiday","Public"),
-        			    Arrays.asList("Start of Classes", "2019/09/05", "N/A","N/A","N/A","Start of Class for Fall 2019","Public"),
-        			    Arrays.asList("Last day to Drop", "2019/09/12", "N/A","N/A","N/A","Last day to drop a class without financial penalty","Public"),
-        			    Arrays.asList("Tuition and Fee Deadline", "2019/09/20", "N/A","N/A","N/A","Deadline to pay for tuition and fee","Public"));
+        			    Arrays.asList("Labour Day", "2019-09-02","N/A","N/A","N/A","Statutory Holiday","Public"),
+        			    Arrays.asList("Start of Classes", "2019-09-05", "N/A","N/A","N/A","Start of Class for Fall 2019","Public"),
+        			    Arrays.asList("Last day to Drop", "2019-09-12", "N/A","N/A","N/A","Last day to drop a class without financial penalty","Public"),
+        			    Arrays.asList("Tuition and Fee Deadline", "2019-09-20", "N/A","N/A","N/A","Deadline to pay for tuition and fee","Public"));
 					csvWriter = new FileWriter("Test.csv");
 					csvWriter.append("Subject");
 	    			csvWriter.append(",");
