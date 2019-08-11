@@ -1,6 +1,8 @@
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
+
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
@@ -141,7 +143,7 @@ public class MonthCalendarView implements EventArrayListClass {
             }
             Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
             dayUnit.setDate(calendarDate);
-            dayUnit.setTopAnchor(txt, 5.0);
+            dayUnit.setTopAnchor(txt, TopAnchor);
             dayUnit.setLeftAnchor(txt,leftAnchor);
             dayUnit.getChildren().add(txt);
             //System.out.println(calendarDate);
@@ -149,28 +151,24 @@ public class MonthCalendarView implements EventArrayListClass {
             for(int i = 0; i< strglobalEventList.size();i++) {
             	LocalDate temp;
             	String eventDate = strglobalEventList.get(i).getEvent_date();
-            	/*String eventDateBefore = strglobalEventList.get(i-1).getEvent_date();
-                if(eventDate == eventDateBefore) {
-                	TopAnchor = TopAnchor+15.0;
-                }*/
             	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         		temp=LocalDate.parse(eventDate, formatter); 
-        		//System.out.println("Line153: Event Date is: "+eventDate);
-        		System.out.println("Line154: Event Date is: "+temp);
-        		System.out.println("Line155: Event Date is: "+calendarDate);
+        		
         		if(temp.equals(calendarDate)) {
         			Text test= new Text(String.valueOf(strglobalEventList.get(i).getEvent_name()));
-                    dayUnit.setTopAnchor(test, TopAnchor+15.0);
+        			if(dayUnit.getChildren().size() >= 5) {
+        				test= new Text(String.valueOf("..."));
+        				dayUnit.setTopAnchor(test, 80.0);
+        			}else if(dayUnit.getChildren().size() == 1) {
+                        dayUnit.setTopAnchor(test, dayUnit.getChildren().size()+19.0);
+                    }else {
+                    	dayUnit.setTopAnchor(test, (dayUnit.getChildren().size()-1)*15+20.0);
+                    }
                     dayUnit.setLeftAnchor(test, leftAnchor);
-                    dayUnit.getChildren().add(test);
-        		}else {
-        			System.out.println("Line159: Shiiiiiiiiiiiiiiittttt!!");
+                    dayUnit.getChildren().add(test);    
         		}
             }
-            
-            
-            
-           
+  
             calendarDate = calendarDate.plusDays(1);
 
             

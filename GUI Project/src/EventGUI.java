@@ -32,6 +32,11 @@ import java.time.LocalDate;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType; 
 
+/**
+ * 
+ * @author hechen
+ * Event GUI code that displays UI on adding a new event to the calendar.
+ */
 public class EventGUI implements EventArrayListClass {
 
 	
@@ -52,6 +57,11 @@ public class EventGUI implements EventArrayListClass {
 	private TextField typedEndTime = new TextField();
 	private Event eventVariable = new Event();
 	
+	/**
+	 * 
+	 * @return VBox Returns the display back to user when called on by clicking "Add Event" from Month Calendar view
+	 * 
+	 */
 	public VBox getDisplay() {	
 		
 		HandleButtonAdd handleSave = new HandleButtonAdd("Save");
@@ -73,11 +83,7 @@ public class EventGUI implements EventArrayListClass {
 			To get around the the default handle in the handle button add class*/
 			@Override
 			public void handle (ActionEvent a) {
-				
 			
-				
-				
-				
 				eventVariable.setEvent_name(typedName.getText());
 				
 				//eventVariable.setEvent_date(typedDate.getText());
@@ -89,21 +95,23 @@ public class EventGUI implements EventArrayListClass {
 				eventVariable.setEvent_StartTime(typedStartTime.getText());
 				
 				eventVariable.setEvent_EndTime(typedEndTime.getText());
-								
-				strglobalEventList.add(eventVariable);
-				
 				
 				Event printEvent = eventVariable;
+				if(typedName.getText().isEmpty() || typedDate.getText().isEmpty() || typedDes.getText().isEmpty() 
+						|| typedStartTime.getText().isEmpty() || typedEndTime.getText().isEmpty()) {
+					
+				}else {
+					strglobalEventList.add(eventVariable);
 				
-				ie.ExportCSV(printEvent);
+				    ie.ExportCSV(printEvent);}
 				
-				System.out.println("Success: " + printEvent.toString());
-				System.out.println("Success: EventGUI Line 86 (Date) " + printEvent.event_Date_Time);
+				    System.out.println("Success: " + printEvent.toString());
+				    System.out.println("Success: EventGUI Line 86 (Date) " + printEvent.event_Date_Time);
 				
 				Stage stage = (Stage) saveEvent.getScene().getWindow();
-				stage.close();
+				stage.close();}
 				
-			} 
+		
 			
 				
 				

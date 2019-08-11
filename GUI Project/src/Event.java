@@ -2,8 +2,9 @@
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.*;
-
+import javafx.scene.control.Label;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -13,13 +14,14 @@ public class Event {
 	//protected String event_date;
 	protected int id = 0;
 	protected String event_date;
-	protected String privacy_type;
-	protected String event_name = "";
-	protected String event_description = "";
+	protected Date event_Date_Time; //start date
+	protected LocalDate forLabel;
+	protected String privacy_type="1";
+	protected String event_name = null;
+	protected String event_description = null;
 	protected int color_id = 0;
 	protected String event_StartTime;
 	protected String event_EndTime;
-	protected Date event_Date_Time; //start date
 	protected String event_EndDate;
 	private Alert dateAlert = new Alert(AlertType.WARNING);
 
@@ -49,6 +51,13 @@ public class Event {
 		return a;
 		
 	}
+	/*public LocalDate getForLabel() {
+		return forLabel;
+	}
+
+	public void setForLabel(LocalDate forLabel) {
+		this.forLabel = forLabel;
+	}*/
 	public Event newEvent(Event newevent) {
 		return newevent.newEvent(newevent);
 	}
@@ -84,7 +93,7 @@ public class Event {
 		}
 		
 	
-	public void setEvent_Date_Time(String event_date) {
+	/*public void setEvent_Date_Time(String event_date) {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			this.event_Date_Time = formatter.parse(event_date);
@@ -92,11 +101,48 @@ public class Event {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			dateAlert.setAlertType(AlertType.WARNING);
-			dateAlert.setContentText("Event date is incorrectly formatted.");
+			dateAlert.setContentText("Something Event date is incorrectly formatted.");
 			dateAlert.show();
 		}
+	}*/
+	
+	public Label createEventLabel() {
+		
+		Label eventDescription = new Label(this.event_name);
+		
+		return eventDescription;
 	}
 	
+	public ArrayList<String> getEventName(ObservableList<Event> globalList) {
+		
+		ArrayList<String> EventName = new ArrayList<String>();
+		
+		for(int i = 1; i < globalList.size(); i++) {
+			
+			EventName.add(globalList.get(i).getEvent_name());
+		}
+		
+		
+		
+		return EventName;
+		
+	}
+	
+	
+	public ArrayList<String> getEventDate(ObservableList<Event> globalList){
+		
+		ArrayList<String> EventDate = new ArrayList<String>();
+		
+		for(int i = 1; i < globalList.size(); i++) {
+			
+			EventDate.add(globalList.get(i).getEvent_date());
+		}
+		
+		
+		
+		return EventDate;
+		
+	}
 	public Date eventString_to_Date(String inputEvent) {
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");

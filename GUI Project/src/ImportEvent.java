@@ -10,9 +10,7 @@ public class ImportEvent implements EventArrayListClass{
 		private String filename;
 		private String line;
 		private FileWriter csvWriter;
-	/*public static void main(String[] args)  {
-        System.out.println(strglobalEventList.get(0).getEvent_date());
-	} */  
+
         public ObservableList<Event> ReadBoxFromCSV(String fileName) {
         	int row = 0;
         	int column = 0;
@@ -91,9 +89,9 @@ public class ImportEvent implements EventArrayListClass{
 		        csvWriter.append(",");
 		        csvWriter.append("N/A");
 		        csvWriter.append(",");
-		        csvWriter.append("N/A");
+		        csvWriter.append(event.getEvent_StartTime());
 		        csvWriter.append(",");
-		        csvWriter.append("N/A");
+		        csvWriter.append(event.getEvent_EndTime());
 		        csvWriter.append(",");
 		        csvWriter.append(event.getEvent_description());
 		        csvWriter.append(",");

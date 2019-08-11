@@ -2,13 +2,25 @@ import java.util.Date;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+
+/**
+ * 
+ * @author hechen
+ * Code that displays the view event stage that allows users to view all inputted events
+ *
+ */
 public class viewEventGUI implements EventArrayListClass{
 	//Variables for the View Event GUI screen
+	/* Creating variables for table view of View events
+	 * These are GUI objects organized to display user events in a methodical manner.
+	 */
 		private VBox viewEventsDisplay = new VBox();
 		private Label viewEventsname = new Label("Event Name: ");
 		private Label viewEventsDate = new Label("Event DateTest: ");
@@ -20,10 +32,14 @@ public class viewEventGUI implements EventArrayListClass{
 		private VBox viewEventContent3 = new VBox();
 		private TableView viewEventTable = new TableView();
 		
+		/*
+		 * Method that opens view event display. Initializes the table view columns
+		 */
+		
 		public VBox getViewEventDisplay() {
 			
 			
-			viewEventTable.setEditable(false);
+			viewEventTable.setEditable(true);
 			TableColumn eventNameCol = new TableColumn("Event Name");
 			eventNameCol.setMinWidth(150);
 			eventNameCol.setCellValueFactory(new PropertyValueFactory<Event, String>("event_name"));
@@ -50,6 +66,12 @@ public class viewEventGUI implements EventArrayListClass{
 			viewEventTable.setItems(strglobalEventList);
 			viewEventTable.getColumns().addAll(eventNameCol, eventDateCol, eventStartTimeCol, eventEndTimeCol, eventDesCol);
 			
+			eventNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
+	   		 eventNameCol.setSortable(false);
+	   		 eventDateCol.setSortable(false);
+	   		 eventStartTimeCol.setSortable(false);
+	   		 eventEndTimeCol.setSortable(false);
+	   		 eventDesCol.setSortable(false);
 			
 			viewEventsDisplay.getChildren().add(viewEventsTitle);
 			viewEventsDisplay.getChildren().add(viewEventContents);
@@ -58,4 +80,9 @@ public class viewEventGUI implements EventArrayListClass{
 			
 			return viewEventsDisplay;
 		}
+		public void changeEventName(CellEditEvent editCell) {
+	   		 
+	   		 Event eventSelected = (Event) viewEventTable.getSelectionModel().getSelectedItem();
+	   		 eventSelected.setEvent_name(editCell.getNewValue().toString());
+	   	 }
 }
