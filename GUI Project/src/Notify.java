@@ -64,12 +64,14 @@ public class Notify implements EventArrayListClass{
 				}
 				
 				LocalTime compareTime;
-				for (int i=0; i<currentGlobalSize; i++) {
+				if (eventTimes.isEmpty()==false){
+				for (int i=0; i<eventTimes.size(); i++) {
 					System.out.println("Notify.L67:: This is the compare time for loop iter "+i);
 					now=LocalTime.now();
 					System.out.println("Notify.L69:: This is ~now~: \n"+ now);
 					nowish=now.minus(30, ChronoUnit.MINUTES);
 					System.out.println("Notify.L70:: This is ~nowish~: \n"+ nowish+"\n      This is eventTimes size: "+eventTimes.size());
+					
 					compareTime=eventTimes.get(i);
 					if(nowish.isAfter(compareTime))
 					{
@@ -81,6 +83,7 @@ public class Notify implements EventArrayListClass{
 						    event.close();
 						}
 					}
+				}
 				}
 				
 				
