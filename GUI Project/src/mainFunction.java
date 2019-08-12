@@ -17,6 +17,8 @@ public class mainFunction extends Application {
         
         public static void main(String[] args) {
             launch(args);
+            Notify checker=new Notify();
+            checker.checkTime();
         }
 	}
 	
