@@ -1,0 +1,26 @@
+CPSC 233 Team 5 Test Script
+
+Calendar App
+
+A) Function: Open Calendar and add an event
+
+1. Launch calendar app by compiling and executing mainFunction.java in project folder
+2. On Calendar GUI, click on "Add Event"
+3. Follow the directions in the "Add Event" GUI, and add one event in the calendar following the subsequent formatting:
+
+Event Name: [String]
+Event Date: yyyy-MM-dd
+Event Description: [String]
+Event Start Time (in 24-hr time): HH:mm
+Event End Time (in 24-hr time): HH:mm
+
+4. Click "Save" to add your event to the calendar
+5. From the monthly calendar view, scroll to the appropriate date to view event.
+
+B) Function: View Events
+
+1. From the calendar GUI view, click "View Events"
+2. On the "View Events" GUI, the added event should display in the list of events
+3. Exit the "View Events" GUI
+4. Scroll to the date of your event on the month-calendar GUI view
+5. Your event name should be displayed on the appropriate calendar date.
