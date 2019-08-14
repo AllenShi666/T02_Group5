@@ -29,7 +29,7 @@ public class viewEventGUI implements EventArrayListClass{
 		private VBox viewEventContent3 = new VBox();
 		private TableView viewEventTable = new TableView();
 		
-		/*
+		/**
 		 * Method that opens view event display. Initializes the table view columns
 		 */
 		
@@ -74,6 +74,7 @@ public class viewEventGUI implements EventArrayListClass{
 			return viewEventsDisplay;
 			
 		}
+		
 		public void changeEventName(CellEditEvent editCell) {
 	   		 
 	   		 Event eventSelected = (Event) viewEventTable.getSelectionModel().getSelectedItem();

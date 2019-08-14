@@ -24,11 +24,21 @@ import java.util.*;
  * https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html
  */
 
+/**
+ * 
+ * @author Team5
+ * @see https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html 
+ * 
+ */
 public class customCalendarObject extends AnchorPane {
 
 	//Single date displayed on calendar
 	private LocalDate day;
 	
+	/**
+	 * 
+	 * @param children Constructor that initializes the Calendar view with custom calendar nodes
+	 */
 	public customCalendarObject(Node...children) {
 		
 		super(children);
@@ -36,14 +46,19 @@ public class customCalendarObject extends AnchorPane {
 	
 	}
 	
-	/* Getter and setter methods for custom day class object
+	/**
 	 * 
+	 * @return LocalDate day. Fetches the date for the node
 	 */
 	public LocalDate getDate() {
 		
 		return day;
 	}
 	
+	/**
+	 * 
+	 * @param inputDate retrieves the date and initializes the node to the date clicked
+	 */
 	public void setDate(LocalDate inputDate) {
 		
 		this.day = inputDate;

@@ -4,11 +4,22 @@ import java.util.*;
 import java.nio.charset.StandardCharsets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
+/**
+ * @author Team5
+ * This class will have two methods built-in, one is to take info from existing *.csv file, the other one is to export info stored in ObservableList &lt;Event&gt; 
+ * to a *.csv, so that next time the program run, we do not lose any info from last run
+ *
+ */
 public class ImportEvent implements EventArrayListClass{
 	
 		private FileWriter csvWriter;
-
+		
+		 /**
+         * ReadBoxFromCSV will take the *.csv file name, import every single cell in the csv file and store info to ObservableList &lt;Event&gt; in the type of Event.
+         * If there is no file exist whe nthe application run, it will create one test.csv file with all school event inside 
+         * @param fileName String filename for *.csv file
+         * @return ObservableList &lt;Event&gt; the ObservableList will store all event from *.csv file 
+         */
         public ObservableList<Event> ReadBoxFromCSV(String fileName) {
         	int row = 0;
         	int column = 0;
@@ -78,6 +89,10 @@ public class ImportEvent implements EventArrayListClass{
             return existEvent;
         }
         
+        /**
+         * ExportCSV will export every event that user created in the program to a *.csv file
+         * @param event take in the argument as event which has all event info stored
+         */
         public void ExportCSV(Event event) {
 			try {
 				csvWriter = new FileWriter("Test.csv",true);
