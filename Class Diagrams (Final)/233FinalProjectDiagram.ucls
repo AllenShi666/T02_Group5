@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="ImportEvent" project="CPSC233Project_FINAL" 
     file="/CPSC233Project_FINAL/src/ImportEvent.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="175" width="283" x="616" y="455"/>    
+    <position height="175" width="283" x="536" y="56"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="customCalendarObject" project="CPSC233Project_FINAL" 
     file="/CPSC233Project_FINAL/src/customCalendarObject.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1072" y="487"/>    
+    <position height="-1" width="-1" x="668" y="614"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,77 +21,68 @@
   </class>  
   <class id="3" language="java" name="Event" project="CPSC233Project_FINAL" file="/CPSC233Project_FINAL/src/Event.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="354" width="260" x="144" y="388"/>    
+    <position height="354" width="260" x="159" y="375"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="Notify" project="CPSC233Project_FINAL" 
-    file="/CPSC233Project_FINAL/src/Notify.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="484" y="157"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="MonthCalendarView" project="CPSC233Project_FINAL" 
+  <class id="4" language="java" name="MonthCalendarView" project="CPSC233Project_FINAL" 
     file="/CPSC233Project_FINAL/src/MonthCalendarView.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1065" y="153"/>    
+    <position height="-1" width="-1" x="1027" y="539"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="6" language="java" name="EventArrayListClass" project="CPSC233Project_FINAL" 
+  <interface id="5" language="java" name="EventArrayListClass" project="CPSC233Project_FINAL" 
     file="/CPSC233Project_FINAL/src/EventArrayListClass.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="783" y="380"/>    
+    <position height="-1" width="-1" x="592" y="384"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="7" language="java" name="EventGUI" project="CPSC233Project_FINAL" 
+  <class id="6" language="java" name="EventGUI" project="CPSC233Project_FINAL" 
     file="/CPSC233Project_FINAL/src/EventGUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="252" y="170"/>    
+    <position height="-1" width="-1" x="360" y="171"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="HandleButtonAdd" project="CPSC233Project_FINAL" 
+  <class id="7" language="java" name="HandleButtonAdd" project="CPSC233Project_FINAL" 
     file="/CPSC233Project_FINAL/src/HandleButtonAdd.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="86" y="191"/>    
+    <position height="-1" width="-1" x="117" y="208"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="viewEventGUI" project="CPSC233Project_FINAL" 
+  <class id="8" language="java" name="viewEventGUI" project="CPSC233Project_FINAL" 
     file="/CPSC233Project_FINAL/src/viewEventGUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="759" y="159"/>    
+    <position height="-1" width="-1" x="1011" y="161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="mainFunction" project="CPSC233Project_FINAL" 
+  <class id="9" language="java" name="mainFunction" project="CPSC233Project_FINAL" 
     file="/CPSC233Project_FINAL/src/mainFunction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="74" y="66"/>    
+    <position height="-1" width="-1" x="128" y="68"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="HandleButtonAdd.eventWindow" project="CPSC233Project_FINAL" 
+  <class id="10" language="java" name="HandleButtonAdd.eventWindow" project="CPSC233Project_FINAL" 
     file="/CPSC233Project_FINAL/src/HandleButtonAdd.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="74" y="356"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -100,72 +91,75 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="12">    
+  <realization id="11">    
     <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="TARGET" refId="5"/>  
   </realization>  
-  <realization id="13">    
-    <bendpoint x="390" y="335"/>    
-    <bendpoint x="467" y="385"/>    
+  <realization id="12">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <nesting id="13">    
     <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
+    <end type="TARGET" refId="10"/>  
+  </nesting>  
   <association id="14">    
-    <bendpoint x="1028" y="668"/>    
-    <bendpoint x="728" y="669"/>    
-    <bendpoint x="532" y="672"/>    
-    <bendpoint x="470" y="671"/>    
-    <bendpoint x="438" y="669"/>    
-    <bendpoint x="422" y="669"/>    
+    <bendpoint x="491" y="583"/>    
+    <bendpoint x="467" y="580"/>    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="15" name="dayEventList"/>      
-      <multiplicity id="16" minimum="0" maximum="2147483647"/>    
+      <attribute id="15" name="dayEventList">        
+        <position height="0" width="0" x="15" y="-13"/>      
+      </attribute>      
+      <multiplicity id="16" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="15" y="-13"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="17">    
-    <bendpoint x="596" y="359"/>    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="18">    
-    <bendpoint x="938" y="350"/>    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <association id="19">    
-    <bendpoint x="511" y="525"/>    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="20" name="ie"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="22">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="11"/>  
-  </nesting>  
-  <association id="23">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="24" name="CalendarDays"/>      
-      <multiplicity id="25" minimum="0" maximum="2147483647"/>    
+  <association id="17">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="18" name="CalendarDays">        
+        <position height="0" width="0" x="-404" y="127"/>      
+      </attribute>      
+      <multiplicity id="19" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-404" y="127"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="26">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="27" name="eventVariable"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
+  <association id="20">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="21" name="ie">        
+        <position height="0" width="0" x="-80" y="-399"/>      
+      </attribute>      
+      <multiplicity id="22" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-80" y="-399"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="23">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="24">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="25" name="eventVariable">        
+        <position height="0" width="0" x="15" y="-13"/>      
+      </attribute>      
+      <multiplicity id="26" minimum="0" maximum="1">        
+        <position height="0" width="0" x="15" y="-13"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="29">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="6"/>  
+  <realization id="27">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
   </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
